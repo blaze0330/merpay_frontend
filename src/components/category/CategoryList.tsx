@@ -1,6 +1,6 @@
 import CategoryItem from './CategoryItem';
 import { useDispatch } from 'react-redux';
-import { getShops } from '../../store/actions/shops';
+import { getShops, getShopsByCategory } from '../../store/actions/shops';
 import { CategoryItems } from '../../types';
 
 type CategoriesProps = {
@@ -9,7 +9,7 @@ type CategoriesProps = {
 const CategoryList = ({ categories }: CategoriesProps) => {
   const dispatch = useDispatch();
   const showAllShops = () => {
-    dispatch(getShops());
+    dispatch(getShopsByCategory({ id: null }));
   };
 
   return (

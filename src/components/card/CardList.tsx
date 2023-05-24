@@ -17,6 +17,8 @@ const CardList = ({ shops }: CardListProps) => {
           flexFlow: 'row wrap',
           justifyContent: 'center'
         }}>
+        {/* {shops.length > 0 &&
+          shops.map((item: CardItems) => <CardItem key={item.id} shops={item} />)} */}
         {shops.length > 0 &&
           shops.map((item: CardItems) => <CardItem key={item.id} shops={item} />)}
       </div>

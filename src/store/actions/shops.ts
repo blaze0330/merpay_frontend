@@ -41,7 +41,7 @@ export const getShopById: any = (id?: number) => {
   };
 };
 
-export const getShopsByCategory: any = (id?: number) => {
+export const getShopsByCategory: any = (id: number | null) => {
   return async (dispatch: any) => {
     dispatch({ type: GET_SHOPBYCATEGORY_REQUEST });
     try {

@@ -14,19 +14,25 @@ import {
 export type State = {
   loading: boolean;
   shops: CardItems[] | [];
+  filteredShops: CardItems[] | [];
   shop: CardItems | null;
+  // id: number | null;
 };
 
 export const initialState = {
   loading: false,
   shops: [],
-  shop: null
+  shop: null,
+  // id: null,
+  filteredShops: []
 } as State;
 
 type ActionType = {
   type: string;
   payload: any;
   filterKey?: string;
+  // id: number | null;
+  filteredShops: CardItems[];
 };
 
 export default function shops(state: State = initialState, action: ActionType) {
@@ -40,7 +46,8 @@ export default function shops(state: State = initialState, action: ActionType) {
       return {
         ...state,
         loading: false,
-        shops: action.payload.filter((res: CardItems) =>
+        shops: action.payload,
+        filteredShops: action.payload.filter((res: CardItems) =>
           res.name?.toLowerCase().includes((action.filterKey || '').toLowerCase())
         )
       };
@@ -79,7 +86,10 @@ export default function shops(state: State = initialState, action: ActionType) {
       return {
         ...state,
         loading: false,
-        shops: state.shops.filter((res: CardItems) => res.category_id === Number(action.payload.id))
+        // id: action.payload.id
+        filteredShops: action.payload.id
+          ? state.shops.filter((shop) => shop.category_id === Number(action.payload.id))
+          : state.shops
       };
     case GET_SHOPBYCATEGORY_FAILURE:
       return {
