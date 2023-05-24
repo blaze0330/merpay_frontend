@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { getShopsByCategory } from '../../store/actions/shops';
 import { CategoryItems } from '../../types';
+import { useNavigate } from 'react-router';
 
 type CategoryItemProps = {
   categories: CategoryItems;
@@ -8,6 +9,7 @@ type CategoryItemProps = {
 
 const CategoryItem = ({ categories }: CategoryItemProps) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const categoryClick = () => {
     dispatch(
@@ -15,6 +17,7 @@ const CategoryItem = ({ categories }: CategoryItemProps) => {
         id: categories.id
       })
     );
+    navigate(`/?categories=${categories.id}`);
   };
 
   return (

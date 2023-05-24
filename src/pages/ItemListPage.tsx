@@ -4,7 +4,6 @@ import { getCategories } from '../store/actions/categories';
 import { getShops } from '../store/actions/shops';
 import CategoryList from '../components/category/CategoryList';
 import CardList from '../components/card/CardList';
-import { CardItems } from '../types';
 
 const ItemListPage: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
