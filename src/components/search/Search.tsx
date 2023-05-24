@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-// import { CardItems } from "../../types";
-// import { useDispatch } from "react-redux";
-// import { getShops } from "../../store/actions/shops";
-
+import { useDispatch } from 'react-redux';
+import { getShops } from '../../store/actions/shops';
 const Search = () => {
-  const [keyword, setKeyword] = useState<string>();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const onKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    setKeyword(e.target.value);
-    // dispatch(getShops(e.target.value));
+    dispatch(getShops(e.target.value));
   };
 
   return (
@@ -17,7 +12,6 @@ const Search = () => {
       type="text"
       placeholder="search"
       color="black"
-      value={keyword}
       onChange={onKeywordChange}
       style={{
         backgroundColor: 'lightgrey',
