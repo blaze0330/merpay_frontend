@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { CategoryItems } from '../../types';
 import { getShopsByCategory } from '../../store/actions/shops';
+import { CategoryItems } from '../../types';
 
 type CategoryItemProps = {
   categories: CategoryItems;

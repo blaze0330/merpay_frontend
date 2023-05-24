@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { getShopById } from '../store/actions/shops';
 import { useDispatch, useSelector } from 'react-redux';
+import { getShopById } from '../store/actions/shops';
 import { useParams } from 'react-router';
 import DetailCard from '../components/card/DetailCard/DetailCard';
 

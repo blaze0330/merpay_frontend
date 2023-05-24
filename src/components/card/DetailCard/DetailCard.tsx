@@ -3,6 +3,7 @@ import { CardItems } from '../../../types';
 type DetailCardProps = {
   shop?: CardItems;
 };
+
 const DetailCard = ({ shop }: DetailCardProps) => {
   return (
     <div

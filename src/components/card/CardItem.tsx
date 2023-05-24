@@ -5,6 +5,7 @@ import './cardStyle.scss';
 type CardItemProps = {
   shops: CardItems;
 };
+
 const CardItem = ({ shops }: CardItemProps) => {
   const navigate = useNavigate();
 

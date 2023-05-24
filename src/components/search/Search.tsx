@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getShops } from '../../store/actions/shops';
+
 const Search = () => {
   const dispatch = useDispatch();
   const onKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
