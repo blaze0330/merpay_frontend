@@ -1,10 +1,10 @@
 import React from 'react';
-import ItemListHeader from './Header/ItemListHeader';
+import Header from '../components/header/Header';
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }): JSX.Element => {
   return (
     <div className="layout">
-      <ItemListHeader />
+      <Header />
       {children}
     </div>
   );

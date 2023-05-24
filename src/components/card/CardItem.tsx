@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import { CardItems } from '../../types';
 import './cardStyle.scss';
 
@@ -5,8 +6,14 @@ type CardItemProps = {
   shops: CardItems;
 };
 const CardItem = ({ shops }: CardItemProps) => {
+  const navigate = useNavigate();
+
+  const cardDetail = () => {
+    navigate(`/detail/${shops.id}`);
+  };
+
   return (
-    <div className="card_container" style={{ position: 'relative' }}>
+    <div className="card_container" style={{ position: 'relative' }} onClick={cardDetail}>
       <div className="card_img">
         <img src={shops.image} alt="fail image" height={200} width={200} />
         <div style={{ margin: '5px 10px' }}>

@@ -1,4 +1,5 @@
 import { getItem, getItemsList } from '../api/api';
+import { RootState } from '../reducers';
 import {
   GET_SHOPBYCATEGORY_REQUEST,
   GET_SHOPBYCATEGORY_SUCCESS,
