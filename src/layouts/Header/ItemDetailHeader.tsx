@@ -9,10 +9,12 @@ import { useSelector } from 'react-redux';
 
 const ItemDetailHeader = () => {
   const shops = useSelector((state: any) => state.shops.shop);
+
   const navigate = useNavigate();
   const showListsPage = () => {
     navigate('/');
   };
+
   return (
     <>
       <div
@@ -45,7 +47,7 @@ const ItemDetailHeader = () => {
           }}
         />
 
-        <div style={{ fontSize: '20px' }}>{shops.name}</div>
+        <div style={{ fontSize: '20px' }}>{shops?.name}</div>
         <FontAwesomeIcon
           icon={faCircleUp}
           style={{

@@ -86,7 +86,6 @@ export default function shops(state: State = initialState, action: ActionType) {
       return {
         ...state,
         loading: false,
-        // id: action.payload.id
         filteredShops: action.payload.id
           ? state.shops.filter((shop) => shop.category_id === Number(action.payload.id))
           : state.shops

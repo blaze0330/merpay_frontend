@@ -13,6 +13,7 @@ const ItemDetailPage = () => {
   useEffect(() => {
     dispatch(getShopById(id));
   }, [dispatch]);
+
   return <DetailCard shop={shop} />;
 };
 
