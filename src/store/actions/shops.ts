@@ -1,13 +1,12 @@
-import { getItem, getItemsList } from "../api/api";
-import { RootState } from "../reducers";
+import { getItem, getItemsList } from '../api/api';
 import {
   GET_SHOPBYCATEGORY_REQUEST,
   GET_SHOPBYCATEGORY_SUCCESS,
   GET_SHOPBYID_REQUEST,
   GET_SHOPBYID_SUCCESS,
   GET_SHOP_REQUEST,
-  GET_SHOP_SUCCESS,
-} from "../selectors/shops";
+  GET_SHOP_SUCCESS
+} from '../selectors/shops';
 
 export const getShops: any = (filterKey: string) => {
   return async (dispatch: any) => {
@@ -18,9 +17,11 @@ export const getShops: any = (filterKey: string) => {
       dispatch({
         type: GET_SHOP_SUCCESS,
         payload: shops.data.data,
-        filterKey: filterKey,
+        filterKey: filterKey
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
@@ -32,9 +33,11 @@ export const getShopById: any = (id?: number) => {
 
       dispatch({
         type: GET_SHOPBYID_SUCCESS,
-        payload: shop.data,
+        payload: shop.data
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
@@ -44,8 +47,10 @@ export const getShopsByCategory: any = (id?: number) => {
     try {
       dispatch({
         type: GET_SHOPBYCATEGORY_SUCCESS,
-        payload: id,
+        payload: id
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
